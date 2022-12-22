@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+}
+
+#root {
+    /* font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+
+    -webkit-text-size-adjust: 100%; */
+
+    min-height: 100%;
+    background-image: linear-gradient(to right, #0bc5ea, #4299e1);
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2rem;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#sudoku .field[readonly] {
+    color: black;
+}
+
+#sudoku .field {
+    height: 3rem;
+    width: 3rem;
+    /* margin: 0px; */
+    background: transparent;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+#sudoku td {
+    border: 1px solid white;
+    text-align: center;
+    /* margin: 0px; */
+    padding: 0px;
+    background: transparent;
+}
+#sudoku td:first-child {
+    border-left: solid white;
+}
+#sudoku td:nth-child(3n) {
+    border-right: solid white;
+}
+#sudoku tr:first-child {
+    border-top: solid white;
+}
+#sudoku tr:nth-child(3n) td {
+    border-bottom: solid white;
+}
